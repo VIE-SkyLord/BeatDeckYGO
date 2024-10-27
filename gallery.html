@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Image Gallery</title>
+                <style>
+                    body {
+                        margin: 0;
+                        display: flex;
+                        justify-content: center;
+                    }
+                    .gallery-container {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+                        gap: 10px;
+                        width: 100%;
+                        max-width: 1200px;
+                        padding: 10px;
+                    }
+                    .gallery-item {
+                        position: relative;
+                        border: 1px solid #ccc;
+                        overflow: hidden;
+                        text-align: center;
+                        cursor: pointer;
+                    }
+                    .gallery-item img {
+                        width: 100%;
+                        height: auto;
+                        display: block;
+                    }
+                    .popup {
+                        display: none;
+                        position: fixed;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        background-color: rgba(255, 255, 255, 0.8);
+                        border: 2px solid #000;
+                        padding: 20px;
+                        z-index: 10;
+                        width: 80vw;
+                        max-height: 90vh;
+                        overflow: auto;
+                        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+                    }
+                    .gallery-item.active .popup {
+                        display: block;
+                    }
+                    .no-popup-message {
+                        color: red;
+                        font-weight: bold;
+                    }
+                    @media (max-width: 600px) {
+                        .popup {
+                            width: 90vw;
+                            max-height: 80vh;
+                        }
+                    }
+                    @media (min-width: 1200px) {
+                        .gallery-container {
+                            grid-template-columns: repeat(10, 1fr);
+                        }
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="gallery-container">
+            
+                            <div class="gallery-item" onclick="togglePopup(this)">
+                                <img src="imageDecks/Branded.webp" alt="Branded.webp">
+                                <p>Branded</p>
+                                <div class="popup">
+                                    <p class="no-popup-message">Không có pop-up cho ảnh này</p>
+                                </div>
+                            </div>
+                        
+                            <div class="gallery-item" onclick="togglePopup(this)">
+                                <img src="imageDecks/Centur-ion.webp" alt="Centur-ion.webp">
+                                <p>Centur-ion</p>
+                                <div class="popup">
+                                    <p class="no-popup-message">Không có pop-up cho ảnh này</p>
+                                </div>
+                            </div>
+                        
+                            <div class="gallery-item" onclick="togglePopup(this)">
+                                <img src="imageDecks/Dinomorphia.webp" alt="Dinomorphia.webp">
+                                <p>Dinomorphia</p>
+                                <div class="popup">
+                                    <p class="no-popup-message">Không có pop-up cho ảnh này</p>
+                                </div>
+                            </div>
+                        
+                            <div class="gallery-item" onclick="togglePopup(this)">
+                                <img src="imageDecks/Endymion.webp" alt="Endymion.webp">
+                                <p>Endymion</p>
+                                <div class="popup">
+                                    <p class="no-popup-message">Không có pop-up cho ảnh này</p>
+                                </div>
+                            </div>
+                        
+                            <div class="gallery-item" onclick="togglePopup(this)">
+                                <img src="imageDecks/Heros.webp" alt="Heros.webp">
+                                <p>Heros</p>
+                                <div class="popup">
+                                    <p class="no-popup-message">Không có pop-up cho ảnh này</p>
+                                </div>
+                            </div>
+                        
+                            <div class="gallery-item" onclick="togglePopup(this)">
+                                <img src="imageDecks/Infernoble%20Knight.webp" alt="Infernoble Knight.webp">
+                                <p>Infernoble Knight</p>
+                                <div class="popup">
+                                    <p class="no-popup-message">Không có pop-up cho ảnh này</p>
+                                </div>
+                            </div>
+                        
+                            <div class="gallery-item" onclick="togglePopup(this)">
+                                <img src="imageDecks/Labrynth.webp" alt="Labrynth.webp">
+                                <p>Labrynth</p>
+                                <div class="popup">
+                                    <p class="no-popup-message">Không có pop-up cho ảnh này</p>
+                                </div>
+                            </div>
+                        
+                            <div class="gallery-item" onclick="togglePopup(this)">
+                                <img src="imageDecks/Marincess.webp" alt="Marincess.webp">
+                                <p>Marincess</p>
+                                <div class="popup">
+                                    <p class="no-popup-message">Không có pop-up cho ảnh này</p>
+                                </div>
+                            </div>
+                        
+                            <div class="gallery-item" onclick="togglePopup(this)">
+                                <img src="imageDecks/Mathmech.webp" alt="Mathmech.webp">
+                                <p>Mathmech</p>
+                                <div class="popup">
+                                    <p class="no-popup-message">Không có pop-up cho ảnh này</p>
+                                </div>
+                            </div>
+                        
+                            <div class="gallery-item" onclick="togglePopup(this)">
+                                <img src="imageDecks/Mikanko.webp" alt="Mikanko.webp">
+                                <p>Mikanko</p>
+                                <div class="popup">
+                                    <p class="no-popup-message">Không có pop-up cho ảnh này</p>
+                                </div>
+                            </div>
+                        
+                            <div class="gallery-item" onclick="togglePopup(this)">
+                                <img src="imageDecks/Paleozoic.webp" alt="Paleozoic.webp">
+                                <p>Paleozoic</p>
+                                <div class="popup">
+                                    <p class="no-popup-message">Không có pop-up cho ảnh này</p>
+                                </div>
+                            </div>
+                        
+                            <div class="gallery-item" onclick="togglePopup(this)">
+                                <img src="imageDecks/Purrely.webp" alt="Purrely.webp">
+                                <p>Purrely</p>
+                                <div class="popup">
+                                    <p class="no-popup-message">Không có pop-up cho ảnh này</p>
+                                </div>
+                            </div>
+                        
+                            <div class="gallery-item" onclick="togglePopup(this)">
+                                <img src="imageDecks/Resonators.webp" alt="Resonators.webp">
+                                <p>Resonators</p>
+                                <div class="popup">
+                                    <p class="no-popup-message">Không có pop-up cho ảnh này</p>
+                                </div>
+                            </div>
+                        
+                            <div class="gallery-item" onclick="togglePopup(this)">
+                                <img src="imageDecks/Rikka.webp" alt="Rikka.webp">
+                                <p>Rikka</p>
+                                <div class="popup">
+                                    <p class="no-popup-message">Không có pop-up cho ảnh này</p>
+                                </div>
+                            </div>
+                        
+                            <div class="gallery-item" onclick="togglePopup(this)">
+                                <img src="imageDecks/Ritual%20Beast.webp" alt="Ritual Beast.webp">
+                                <p>Ritual Beast</p>
+                                <div class="popup">
+                                    <img src="imagePopups/Ritual%20Beast.jpg" alt="Ritual%20Beast.jpg" style="width: 100%; height: auto;">
+                                    <p>Ritual Beast</p>
+                                </div>
+                            </div>
+                        
+                            <div class="gallery-item" onclick="togglePopup(this)">
+                                <img src="imageDecks/Salamangreat.webp" alt="Salamangreat.webp">
+                                <p>Salamangreat</p>
+                                <div class="popup">
+                                    <p class="no-popup-message">Không có pop-up cho ảnh này</p>
+                                </div>
+                            </div>
+                        
+                            <div class="gallery-item" onclick="togglePopup(this)">
+                                <img src="imageDecks/Scareclaw.webp" alt="Scareclaw.webp">
+                                <p>Scareclaw</p>
+                                <div class="popup">
+                                    <p class="no-popup-message">Không có pop-up cho ảnh này</p>
+                                </div>
+                            </div>
+                        
+                            <div class="gallery-item" onclick="togglePopup(this)">
+                                <img src="imageDecks/Snake-eye%20Fire%20King.webp" alt="Snake-eye Fire King.webp">
+                                <p>Snake-eye Fire King</p>
+                                <div class="popup">
+                                    <p class="no-popup-message">Không có pop-up cho ảnh này</p>
+                                </div>
+                            </div>
+                        
+                            <div class="gallery-item" onclick="togglePopup(this)">
+                                <img src="imageDecks/Stun.webp" alt="Stun.webp">
+                                <p>Stun</p>
+                                <div class="popup">
+                                    <p class="no-popup-message">Không có pop-up cho ảnh này</p>
+                                </div>
+                            </div>
+                        
+                            <div class="gallery-item" onclick="togglePopup(this)">
+                                <img src="imageDecks/Tearlaments.webp" alt="Tearlaments.webp">
+                                <p>Tearlaments</p>
+                                <div class="popup">
+                                    <p class="no-popup-message">Không có pop-up cho ảnh này</p>
+                                </div>
+                            </div>
+                        
+                            <div class="gallery-item" onclick="togglePopup(this)">
+                                <img src="imageDecks/Tenpai%20Dragon.webp" alt="Tenpai Dragon.webp">
+                                <p>Tenpai Dragon</p>
+                                <div class="popup">
+                                    <img src="imagePopups/Tenpai%20Dragon.png" alt="Tenpai%20Dragon.png" style="width: 100%; height: auto;">
+                                    <p>Tenpai Dragon</p>
+                                </div>
+                            </div>
+                        
+                            <div class="gallery-item" onclick="togglePopup(this)">
+                                <img src="imageDecks/Vaylantz.webp" alt="Vaylantz.webp">
+                                <p>Vaylantz</p>
+                                <div class="popup">
+                                    <p class="no-popup-message">Không có pop-up cho ảnh này</p>
+                                </div>
+                            </div>
+                        
+                            <div class="gallery-item" onclick="togglePopup(this)">
+                                <img src="imageDecks/Voiceless%20Voice.webp" alt="Voiceless Voice.webp">
+                                <p>Voiceless Voice</p>
+                                <div class="popup">
+                                    <img src="imagePopups/Voiceless%20Voice.jpg" alt="Voiceless%20Voice.jpg" style="width: 100%; height: auto;">
+                                    <p>Voiceless Voice</p>
+                                </div>
+                            </div>
+                        
+                            <div class="gallery-item" onclick="togglePopup(this)">
+                                <img src="imageDecks/Yubel.webp" alt="Yubel.webp">
+                                <p>Yubel</p>
+                                <div class="popup">
+                                    <img src="imagePopups/Yubel.png" alt="Yubel.png" style="width: 100%; height: auto;">
+                                    <p>Yubel</p>
+                                </div>
+                            </div>
+                         
+                </div>
+                <script>
+                    function togglePopup(item) {
+                        const popup = item.querySelector('.popup');
+                        const isActive = item.classList.toggle('active');
+                        if (!isActive) {
+                            popup.style.display = 'none';
+                        } else {
+                            popup.style.display = 'block';
+                        }
+                    }
+                    document.addEventListener('click', function(e) {
+                        if (!e.target.closest('.gallery-item')) {
+                            const items = document.querySelectorAll('.gallery-item');
+                            items.forEach(item => {
+                                item.classList.remove('active');
+                                item.querySelector('.popup').style.display = 'none';
+                            });
+                        }
+                    });
+                </script>
+            </body>
+            </html>
+            
